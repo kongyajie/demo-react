@@ -1,33 +1,24 @@
-import Game from "./components/demoUse/Game";
-import Counter from "./components/demoUse/Counter";
-import SharedCounter from "./components/demoUse/SharedCounter";
-import Product from "./components/demoUse/Product";
+import { Fragment, useState } from "react";
+import Demo from "./components/demo";
+import Base from "./components/baseUse";
+import Advanced from "./components/advancedUse";
+import "./App.less";
 
 function App() {
+  const [selectTab, setSelectTab] = useState(1);
   return (
-    <>
-      <div className="app">
-        <div className="flex">
-          <h1>井字棋</h1>
-          <Game></Game>
-        </div>
-
-        <div className="flex">
-          <h1>计数器</h1>
-          <Counter></Counter>
-        </div>
-
-        <div className="flex">
-          <h1>共享计数器</h1>
-          <SharedCounter></SharedCounter>
-        </div>
-
-        <div className="flex">
-          <h1>商品查询</h1>
-          <Product></Product>
-        </div>
-      </div>
-    </>
+    <div className="app">
+      <header className="header">
+        <nav onClick={() => setSelectTab(1)}>Base</nav>
+        <nav onClick={() => setSelectTab(2)}>Advanced</nav>
+        <nav onClick={() => setSelectTab(3)}>Demo</nav>
+      </header>
+      <section className="content">
+        { selectTab === 1 && <Base /> }
+        { selectTab === 2 && <Advanced /> }
+        { selectTab === 3 && <Demo /> }
+      </section>
+    </div>
   );
 }
 

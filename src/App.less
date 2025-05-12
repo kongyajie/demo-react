@@ -1,11 +1,28 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 8px;
   text-align: center;
 }
 
-.logo {
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: goldenrod;
+  > nav {
+    cursor: pointer;
+    background: #f0f0f0;
+    margin-right: 8px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+}
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,4 +56,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */

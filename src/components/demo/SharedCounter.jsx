@@ -9,7 +9,7 @@ export default function SharedCounter() {
 
   return (
     <div>
-      <h1>共同更新的计数器</h1>
+      <p>共同更新的计数器</p>
       <MyButton count={count} onClick={handleClick} />
       <MyButton count={count} onClick={handleClick} />
     </div>
